@@ -15,15 +15,15 @@ void decode_bits (int ch)
 
     if ( ch == '0' | ch == '1' )
     {
-	buff[CHAR_BIT-1-count] = ch - '0';
+	buff[ CHAR_BIT-1-count ] = ch - '0';
 	count++;
 	if ( count == CHAR_BIT )
 	{
 	    int n = 0;	
 	    int dec = CHAR_BIT-1;
- 	    while (dec >= 0)
+ 	    while ( dec >= 0 )
 	    {
-		n += ( buff[dec] << dec );
+		n += ( buff[ dec ] << dec );
 		dec--;
 	    }
 	    putchar( n );
