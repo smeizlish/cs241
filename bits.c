@@ -19,10 +19,20 @@ void decode_bits (int ch)
 	if ( count == CHAR_BIT )
 	{
 	    //convert binary in buff to decimal and print it
-	    
-	    count = 0;
+	    int n = 0;	
+	    int dec = 0;
+ 	    while (count >= 0){
+		if (buff[count] == 1){
+			dec += 1<<n;
+			count--;
+			n++;
+			printf('%i \n', dec);
+			putchar(dec);
+	    		count = 0;
 	}		    
     }
+}
+}
     else if ( isspace(ch) != 0 )
     {
 	return;
