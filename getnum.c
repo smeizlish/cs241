@@ -1,8 +1,11 @@
 #include "getnum.h"
 
 int ch;
-char neg;
+int neg;
 int error = 0;
+//input buffer
+static int[ LONG_BIT ] buff;
+int* buffptr = buff;
 
 long getnum( void ) 
 {
@@ -38,18 +41,28 @@ long getnum( void )
 
 				//infinite loop with break conditions
 				while( ch = getchar() )
-					{
+				{
 					if ( ch == '1' | '0' )
 					{
-				    	//binary conversion
+				    		//read chars into array based on int value
+				    		*buffptr = ch - '0';
+				    		buffptr++;
 					}
-					else if ( isspace( ch ) | ch = EOF ) return output;
+					else if ( isspace( ch ) | ch = EOF )
+					{
+						//read backwards until we're at the start of the array
+						for  (int i = 0; i++; buffptr >= buff )
+						{
+							output |= (*buffptr << i) ;
+							buffptr--;
+						}
+						return output;
+					}
 					else
 					{
 				    		error = 1;
 				    		break;
 					} 
-				
 			    	}
 			    break;
 			    
@@ -68,9 +81,20 @@ long getnum( void )
 			    	{
 					if ( isxdigit( ch ) )
 					{
-				    		//hex conversion
+				    		//read chars into array based on int value
+				    		*buffptr = ch - '0';
+				    		buffptr++;
 					}
-					else if ( isspace( ch ) | ch = EOF ) return output;
+					else if ( isspace( ch ) | ch = EOF )
+					{
+						//read backwards until we're at the start of the array
+						for  (int i = 0; i++; buffptr >= buff )
+						{
+							output |= (*buffptr << 4*i) ;
+							buffptr--;
+						}
+						return output;
+					}
 					else
 					{
 				    		error = 1;
@@ -84,9 +108,20 @@ long getnum( void )
 			    	{ 
 					if ('0' <= ch <= '7' )
 					{   
-			    			//octal conversion
+			    			*buffptr = ch - '0';
+				    		buffptr++;
 			        	}
-			        	if ( isspace( ch ) | ch == EOF ) return output;
+			        	else if ( isspace( ch ) | ch = EOF )
+					{
+						//read backwards until we're at the start of the array
+						for  (int i = 0; i++; buffptr >= buff )
+						{
+							//octal conversion
+							output |= (*buffptr << 3*i) ;
+							buffptr--;
+						}
+						return output;
+					}
 			        	else
 					{
 				    	error = 1;
@@ -97,8 +132,32 @@ long getnum( void )
 				
 		}//ends switch
 	}
-	else if (ch == 	'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9') {
-		output = output*10 + ch;
+	else if ( '1' <= ch <= '9' ) 
+	{
+		while( ch = getchar() )
+		{
+			if ( ch == '1' | '0' )
+			{
+		    		//read chars into array based on int value
+		    		*buffptr = ch - '0';
+		    		buffptr++;
+			}
+			else if ( isspace( ch ) | ch = EOF )
+			{
+				//read backwards until we're at the start of the array
+				for  (int i = 0; i++; buffptr >= buff )
+				{
+					output (*buffptr * 10^i //need method for integer exponentiation
+					buffptr--;
+				}
+				return output;
+			}
+			else
+			{
+		    		error = 1;
+		    		break;
+			} 
+	    	}
 	}		
 
     //error handling
