@@ -4,8 +4,9 @@ int ch;
 int neg;
 int error = 0;
 //input buffer
-static int[ LONG_BIT ] buff;
+static int buff[ sizeof ( long )];
 int* buffptr = buff;
+
 
 long getnum( void ) 
 {
@@ -42,13 +43,13 @@ long getnum( void )
 				//infinite loop with break conditions
 				while( ch = getchar() )
 				{
-					if ( ch == '1' | '0' )
+					if ( ch == '1' | ch == '0' )
 					{
 				    		//read chars into array based on int value
 				    		*buffptr = ch - '0';
 				    		buffptr++;
 					}
-					else if ( isspace( ch ) | ch = EOF )
+					else if ( isspace( ch ) | ( ch == EOF ) )
 					{
 						//read backwards until we're at the start of the array
 						for  (int i = 0; i++; buffptr >= buff )
@@ -85,7 +86,7 @@ long getnum( void )
 				    		*buffptr = ch - '0';
 				    		buffptr++;
 					}
-					else if ( isspace( ch ) | ch = EOF )
+					else if ( isspace( ch ) | ( ch == EOF ) )
 					{
 						//read backwards until we're at the start of the array
 						for  (int i = 0; i++; buffptr >= buff )
@@ -106,12 +107,12 @@ long getnum( void )
 			default:
 				while ( ( ch = getchar() ) | 1 )
 			    	{ 
-					if ('0' <= ch <= '7' )
+					if ('0' <= ch & ch <= '7' )
 					{   
 			    			*buffptr = ch - '0';
 				    		buffptr++;
 			        	}
-			        	else if ( isspace( ch ) | ch = EOF )
+			        	else if ( isspace( ch ) | ( ch == EOF ) )
 					{
 						//read backwards until we're at the start of the array
 						for  (int i = 0; i++; buffptr >= buff )
@@ -132,7 +133,7 @@ long getnum( void )
 				
 		}//ends switch
 	}
-	else if ( '1' <= ch <= '9' ) 
+	else if ( ( '1' <= ch ) & ( ch <= '9' ) ) 
 	{
 		while( ch = getchar() )
 		{
@@ -142,12 +143,12 @@ long getnum( void )
 		    		*buffptr = ch - '0';
 		    		buffptr++;
 			}
-			else if ( isspace( ch ) | ch = EOF )
+			else if ( isspace( ch ) | ( ch == EOF ) )
 			{
 				//read backwards until we're at the start of the array
 				for  (int i = 0; i++; buffptr >= buff )
 				{
-					output (*buffptr * 10^i //need method for integer exponentiation
+					//output (*buffptr * 10^i //need method for integer exponentiation
 					buffptr--;
 				}
 				return output;
