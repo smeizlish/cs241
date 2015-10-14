@@ -36,12 +36,12 @@ long getnum(void) {
 }
 			case 'x'://number is hex
 				ch = getchar();
-				while (ch == '1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'0'|'a'|'b'|'c'|'d'|'e'|'f') {
+				while (isxdigit(ch)) {
 					output = output*16 + ch;\
 					ch = getchar();
 }
 				
-				if (ch != '1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9'|'0'|'a'|'b'|'c'|'d'|'e'|'f') {
+				if (!isxdigit(ch)) {
 					break;
 }
 				return output;
