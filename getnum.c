@@ -40,7 +40,6 @@ long getnum( void )
 					}
 					else if ( isspace( ch ) | ( ch == EOF ) )
 					{
-						printf( "%d %d\n", buffptr, buff );
 						//read backwards until we're at the start of the array
 						int i = 0;
 						buffptr--;

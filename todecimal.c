@@ -1,22 +1,28 @@
-#include "getnum.c"
+#include "getnum.h"
 
 long num;
 
-void main(){
-  while ((ch = getchar()) != EOF){
-    ungetc(ch, stdin);
+void main()
+{    
     num = getnum();
-    printf("%ld\n", num);
-    ch = getchar();
-    if (ch == EOF){
-      break;
-    }
-    else if (isspace(ch)){
-      ch = getchar();
-      while (isspace(ch)){
-        ch = getchar();
-      }
-      ungetc(ch, stdin);
-    }
-  }
-}
+    printf( "%ld\n", num );
+} 
+
+//getnum() handles all this??
+//  while ((ch = getchar()) != EOF){
+//    ungetc(ch, stdin);
+//    num = getnum();
+//    printf("%ld\n", num);
+//    ch = getchar();
+//    if (ch == EOF){
+//      break;
+//    }
+//    else if (isspace(ch)){
+//      ch = getchar();
+//      while (isspace(ch)){
+//        ch = getchar();
+//      }
+//      ungetc(ch, stdin);
+//    }
+//  }
+//}
