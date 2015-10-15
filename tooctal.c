@@ -1,8 +1,8 @@
-#include "getnum.c"
+#include "getnum.h"
 
 long num;
 
-void main(){
+int main( void ){
   num = getnum();
-  printf("0%lx",num);
+  printf("0%lo", num);
 }

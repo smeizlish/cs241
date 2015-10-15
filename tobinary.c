@@ -1,4 +1,4 @@
-#include "getnum.c"
+#include "getnum.h"
 
 long num;
 long converted;
@@ -14,7 +14,7 @@ long bin(long x){
   return x;
 }
 
-void main(){
+int main( void ){
   num = bin(getnum());
   printf("0b%ld", num);
 }

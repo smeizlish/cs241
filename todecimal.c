@@ -2,7 +2,7 @@
 
 long num;
 
-void main()
+int main( void )
 {    
     num = getnum();
     printf( "%ld\n", num );

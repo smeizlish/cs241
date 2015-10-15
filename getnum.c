@@ -165,7 +165,8 @@ long getnum( void )
     if (error)
     {
 	//print a relevant error message
-	
+	printf( "%s\n", "ERROR" );
+
 	//eat non-whitespace characters
 	while ( getchar() != EOF ) continue;
 
@@ -187,9 +188,9 @@ int expon( int e, int x )
   return ret;
 }
 
-int main( void )
+/*int main( void )
 {
     long conv = getnum();
     printf( "%ld", conv );
 
-}
+}*/
