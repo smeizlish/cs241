@@ -1,6 +1,6 @@
 #include "getnum.h"
 
-long num;
+signed long num;
 
 int main( void ){
   num = getnum();
