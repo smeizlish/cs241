@@ -25,7 +25,7 @@ long getnum( void )
 		neg = 1;
 		ch = getchar();
 	}
-	else if ( '0' == ch ) {
+	else if ( ch == '0' ) {
 		ch = getchar();
 		switch (ch) {
 			case 'b'://number is binary
@@ -51,11 +51,16 @@ long getnum( void )
 					}
 					else if ( isspace( ch ) | ( ch == EOF ) )
 					{
+						printf( "%d %d\n", buffptr, buff );
 						//read backwards until we're at the start of the array
-						for  (int i = 0; i++; buffptr >= buff )
+						int i = 0;
+						buffptr--;
+						while ( buffptr >= buff )
 						{
-							output |= (*buffptr << i) ;
+							output = output | ( *buffptr << i );
+							printf( "%d %d %d\n", i, *buffptr, output );
 							buffptr--;
+							i++;
 						}
 						return output;
 					}
@@ -172,4 +177,10 @@ long getnum( void )
 	//let's try again
 	getnum();
     }
+}
+
+int main( void )
+{
+    long conv = getnum();
+    printf( "%ld", conv );
 }
