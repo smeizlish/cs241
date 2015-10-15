@@ -1,0 +1,18 @@
+Zack Sheldon and Sam Meizlish
+10/14/15
+hw4
+
+encode_bits: puts chars in a file into binary
+decode_bits: takes binary input and outputs it in ASCII
+tooctal: takes numeric input, outputs in octal
+todecimal: takes numeric input, outputs in base10
+tohex: takes numeric input, outputs in hexadecimal (lowercase)
+tobinary: takes numeric input, outputs in binary
+
+getnum() returns a long int in decimal notation
+
+compilation errors, warnings, etc.
+valgrind errors, etc.
+time spent
+
+I have adhered to the Honor Code in this assignment.
