@@ -85,11 +85,16 @@ long getnum( void )
 			    
 				while ( ch = getchar() )
 			    	{
-					if ( isxdigit( ch ) )
+					if ( '0' <= ch & ch <= '9' ) 
 					{
-				    		//read chars into array based on int value
-				    		*buffptr = ch - '0';
-				    		buffptr++;
+					    //read chars into array based on int value
+					    *buffptr = ch - '0';
+					    buffptr++;
+					}
+					else if ('A' <= ch & ch <= 'F' )
+					{
+					    *buffptr = ch - 'A' + 10;
+					    buffptr++;
 					}
 					else if ( isspace( ch ) | ( ch == EOF ) )
 					{
@@ -190,11 +195,11 @@ long getnum( void )
     }
 }
 
-long exp( int e, int x )
+long expon( int e, int x )
 {
   int i;
   long ret=1;
-  for (i=0; i < x; i++; ){
+  for (i=0; i < x; i++){
     ret = ret*e;
   }
   return ret;

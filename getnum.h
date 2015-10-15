@@ -12,6 +12,6 @@ long getnum(void);
 //first input value is the base
 //second input value is the number it is raised to
 //ex: e^x
-long exp(int e, int x)
+long expon(int e, int x);
 
 #endif
