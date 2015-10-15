@@ -1,4 +1,3 @@
-#getnum.h
 #include <limits.h>
 #include <stdio.h>
 #include <ctype.h>
