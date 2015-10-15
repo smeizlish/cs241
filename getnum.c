@@ -153,9 +153,10 @@ long getnum( void )
 	}
 	else if ( ( '1' <= ch ) & ( ch <= '9' ) ) 
 	{
+		ungetc( ch, stdin );
 		while( ch = getchar() )
 		{
-			if ( ch == '1' | ch == '0' )
+			if ( ( '0' <= ch ) & ( ch <= '9' ) ) 
 			{
 		    		//read chars into array based on int value
 		    		*buffptr = ch - '0';
@@ -168,7 +169,7 @@ long getnum( void )
 				buffptr--;
 				while( buffptr >= buff )
 				{
-					//output (*buffptr * 10^i //need method for integer exponentiation
+					output += *buffptr * expon( 10, i );
 					buffptr--;
 					i++;
 				}
@@ -195,10 +196,10 @@ long getnum( void )
     }
 }
 
-long expon( int e, int x )
+int expon( int e, int x )
 {
   int i;
-  long ret=1;
+  int ret=1;
   for (i=0; i < x; i++){
     ret = ret*e;
   }
@@ -209,4 +210,5 @@ int main( void )
 {
     long conv = getnum();
     printf( "%ld", conv );
+
 }
