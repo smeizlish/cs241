@@ -173,7 +173,7 @@ long getnum( void )
 	//let's try again
 	getnum();
     }
-    if ( neg ) sign = ~output + 1;
+    if ( neg ) sign = -output;
     else sign |= output;
     return sign;
 }
