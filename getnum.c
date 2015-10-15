@@ -4,7 +4,7 @@ int ch;
 int neg;
 int error = 0;
 //input buffer
-static int buff[ sizeof ( long )];
+static int buff[ sizeof ( long ) - 1];
 int* buffptr = buff;
 
 
@@ -28,19 +28,7 @@ long getnum( void )
 	else if ( ch == '0' ) {
 		ch = getchar();
 		switch (ch) {
-			case 'b'://number is binary
-//				ch = getchar();
-//				while (ch == '1'|'0') {
-//					output = output*2 + ch;
-//					ch = getchar();
-//}
-//				
-//				if (ch != '1'|'0') {
-//					printf("%s", "ERROR");
-//					break;
-//				return output;
-
-				//infinite loop with break conditions
+			case 'b':
 				while( ch = getchar() )
 				{
 					if ( ch == '1' | ch == '0' )
@@ -62,7 +50,7 @@ long getnum( void )
 							buffptr--;
 							i++;
 						}
-						return output;
+						break;
 					}
 					else
 					{
@@ -72,17 +60,7 @@ long getnum( void )
 			    	}
 			    break;
 			    
-			case 'x': //number is hex
-//				ch = getchar();
-//				while (isxdigit(ch)) {
-//					output = output*16 + ch;\
-//					ch = getchar();
-//}
-//				if (!isxdigit(ch)) {
-//					break;
-//}
-//				return output;
-			    
+			case 'x': 
 				while ( ch = getchar() )
 			    	{
 					if ( '0' <= ch & ch <= '9' ) 
@@ -107,7 +85,7 @@ long getnum( void )
 							buffptr--;
 							i++;
 						}
-						return output;
+						break;
 					}
 					else
 					{
@@ -139,12 +117,12 @@ long getnum( void )
 							i++;
 							buffptr--;
 						}
-						return output;
+						break;
 					}
 			        	else
 					{
-				    	error = 1;
-				    	break;
+						error = 1;
+						break;
 					}
 			    }
 			    break;
@@ -173,7 +151,7 @@ long getnum( void )
 					buffptr--;
 					i++;
 				}
-				return output;
+				break;	
 			}
 			else
 			{
@@ -194,6 +172,14 @@ long getnum( void )
 	//let's try again
 	getnum();
     }
+    if ( neg ) 
+    {
+	//new value
+	signed long neg = 0;
+	neg = ~output + 1;
+	return neg;	
+    }
+    else return output;
 }
 
 int expon( int e, int x )
