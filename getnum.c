@@ -58,7 +58,7 @@ long getnum( void )
 						while ( buffptr >= buff )
 						{
 							output = output | ( *buffptr << i );
-							printf( "%d %d %d\n", i, *buffptr, output );
+							//printf( "%d %d %d\n", i, *buffptr, output );
 							buffptr--;
 							i++;
 						}
@@ -94,10 +94,13 @@ long getnum( void )
 					else if ( isspace( ch ) | ( ch == EOF ) )
 					{
 						//read backwards until we're at the start of the array
-						for  (int i = 0; i++; buffptr >= buff )
+						int i = 0;
+						buffptr--;
+						while ( buffptr >= buff )
 						{
 							output |= (*buffptr << 4*i) ;
 							buffptr--;
+							i++;
 						}
 						return output;
 					}
@@ -120,10 +123,15 @@ long getnum( void )
 			        	else if ( isspace( ch ) | ( ch == EOF ) )
 					{
 						//read backwards until we're at the start of the array
-						for  (int i = 0; i++; buffptr >= buff )
+						int i = 0;
+						buffptr--;
+						while( buffptr >= buff )
 						{
 							//octal conversion
+							printf( "%d %d %d\n", i, *buffptr, output );
+							buffptr--;
 							output |= (*buffptr << 3*i) ;
+							i++;
 							buffptr--;
 						}
 						return output;
@@ -142,7 +150,7 @@ long getnum( void )
 	{
 		while( ch = getchar() )
 		{
-			if ( ch == '1' | '0' )
+			if ( ch == '1' | ch == '0' )
 			{
 		    		//read chars into array based on int value
 		    		*buffptr = ch - '0';
@@ -151,10 +159,13 @@ long getnum( void )
 			else if ( isspace( ch ) | ( ch == EOF ) )
 			{
 				//read backwards until we're at the start of the array
-				for  (int i = 0; i++; buffptr >= buff )
+				int i = 0;
+				buffptr--;
+				while( buffptr >= buff )
 				{
 					//output (*buffptr * 10^i //need method for integer exponentiation
 					buffptr--;
+					i++;
 				}
 				return output;
 			}
