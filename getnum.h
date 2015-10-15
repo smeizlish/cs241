@@ -1,24 +1,17 @@
 //getnum.h
-#include <limits.h>
-#include <stdio.h>
-#include <ctype.h>
 
 #ifndef GETNUM_H
 #define GETNUM_H
 
-long getnum(void);
+#include <limits.h>
+#include <stdio.h>
+#include <ctype.h>
 
-#endif
+long getnum(void);
 
 //first input value is the base
 //second input value is the number it is raised to
 //ex: e^x
+long exp(int e, int x)
 
-long exp(int e, int x){
-  int i;
-  long ret=1;
-  for (i=0; i < x; i++; ){
-    ret = ret*e;
-  }
-  return ret;
-}
+#endif

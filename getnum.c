@@ -190,6 +190,16 @@ long getnum( void )
     }
 }
 
+long exp( int e, int x )
+{
+  int i;
+  long ret=1;
+  for (i=0; i < x; i++; ){
+    ret = ret*e;
+  }
+  return ret;
+}
+
 int main( void )
 {
     long conv = getnum();
