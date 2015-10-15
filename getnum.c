@@ -113,7 +113,8 @@ long getnum( void )
 			    break;
 			    
 			default:
-				while ( ( ch = getchar() ) | 1 )
+				ungetc( ch, stdin );
+				while ( ( ch = getchar() ) )
 			    	{ 
 					if ('0' <= ch & ch <= '7' )
 					{   
@@ -128,9 +129,8 @@ long getnum( void )
 						while( buffptr >= buff )
 						{
 							//octal conversion
-							printf( "%d %d %d\n", i, *buffptr, output );
-							buffptr--;
-							output |= (*buffptr << 3*i) ;
+							printf( "i = %d, *buffptr = %d, output = %d\n", i, *buffptr, output );
+							output = output | ( *buffptr << ( 3*i ) ) ;
 							i++;
 							buffptr--;
 						}
