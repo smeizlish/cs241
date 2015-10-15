@@ -6,6 +6,7 @@ int error = 0;
 //input buffer
 static int buff[ sizeof ( long ) - 1];
 int* buffptr = buff;
+signed long sign = 0;
 
 
 long getnum( void ) 
@@ -20,12 +21,12 @@ long getnum( void )
 		//put back the good char that broke the while
 		ungetc(ch, stdin);
 	}
-	else if ( '-' == ch )
+	else if ( ch == '-' )
 	{
 		neg = 1;
 		ch = getchar();
 	}
-	else if ( ch == '0' ) {
+	if ( ch == '0' ) {
 		ch = getchar();
 		switch (ch) {
 			case 'b':
@@ -172,14 +173,9 @@ long getnum( void )
 	//let's try again
 	getnum();
     }
-    if ( neg ) 
-    {
-	//new value
-	signed long neg = 0;
-	neg = ~output + 1;
-	return neg;	
-    }
-    else return output;
+    if ( neg ) sign = ~output + 1;
+    else sign |= output;
+    return sign;
 }
 
 int expon( int e, int x )
