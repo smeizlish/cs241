@@ -94,7 +94,7 @@ long getnum( void )
 							buffptr--;
 							i++;
 						}
-						printf( "hex conversion done, contents of buff[0] =  %d", buff[0]);
+						printf( "hex conversion done, contents of buff =  %d", *buffptr);
 						break;
 					}
 					else
