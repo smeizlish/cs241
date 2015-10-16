@@ -1,5 +1,5 @@
 #include "getnum.h"
-
+//Sam Meizlish and Zack SHeldon 10/16/15
 long num;
 long converted;
 

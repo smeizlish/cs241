@@ -10,9 +10,12 @@ tohex: takes numeric input, outputs in hexadecimal (uppercase)
 tobinary: takes numeric input, outputs in binary
 
 getnum() returns a long int in decimal notation
+negatives are handled with the use of a global flag
 
 compilation errors, warnings, etc.
 valgrind errors, etc.
 time spent
 
 I have adhered to the Honor Code in this assignment.
+Zack Sheldon
+Sam Meizlish

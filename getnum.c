@@ -1,5 +1,5 @@
 #include "getnum.h"
-
+//Sam Meizlish and Zack SHeldon 10/16/15
 int ch;
 int error = 0;
 //input buffer
@@ -20,6 +20,7 @@ long getnum( void )
 	{
 		//consume whitespace
 		while( isspace( ch = getchar() ) ) continue;
+		printf( "consuming whitespace \n" );
 		//put back the good char that broke the loop
 		ungetc(ch, stdin);
 		start = 1;
