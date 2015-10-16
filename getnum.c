@@ -20,6 +20,7 @@ long getnum( void )
 	{
 		//consume whitespace
 		while( isspace( ch = getchar() ) ) continue;
+		printf( "consuming whitespace \n" );
 		//put back the good char that broke the loop
 		ungetc(ch, stdin);
 		start = 1;
