@@ -13,5 +13,10 @@ long getnum(void);
 //second input value is the number it is raised to
 //ex: e^x
 int expon(int e, int x);
+
+//global flags
 extern int neg;
+//true when the next char in stdin is the start of a number
+extern int start;
+
 #endif
