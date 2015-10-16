@@ -52,10 +52,10 @@ long getnum( void )
 						while ( buffptr >= buff )
 						{
 							output = output | ( *buffptr << i );
-							//printf( "%d %d %d\n", i, *buffptr, output );
 							buffptr--;
 							i++;
 						}
+						printf( "%d %d %d\n", i, *buffptr, output );
 						break;
 					}
 					else
