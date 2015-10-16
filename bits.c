@@ -1,5 +1,5 @@
 #include "bits.h"
-
+//Sam Meizlish and Zack SHeldon 10/16/15
 void print_bits(int ch)
 {
     for (int i = CHAR_BIT-1; i >= 0; i--) 
