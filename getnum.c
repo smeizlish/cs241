@@ -12,7 +12,7 @@ long getnum( void )
 {
 	long output = 0;
 	ch = getchar();
-	printf( "got a char\n" );
+	//printf( "got a char\n" );
 	if ( isspace( ch ) )
 	{
 		//consume whitespace
@@ -72,6 +72,10 @@ long getnum( void )
 					{
 					    *buffptr = ch - 'A' + 10;
 					    buffptr++;
+					}
+					else if ('a' <= ch & ch <= 'f' ){
+ 						*buffptr = ch - 'a' + 10;
+						buffptr++;
 					}
 					else if ( isspace( ch ) | ( ch == EOF ) )
 					{
