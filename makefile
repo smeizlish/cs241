@@ -1,4 +1,4 @@
-all: encode_bits decode_bits bits.o
+
 encode_bits: bits.o
 	gccx -o encode_bits encode_bits.c bits.o
 

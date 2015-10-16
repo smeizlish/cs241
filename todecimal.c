@@ -1,4 +1,4 @@
-#include "getnum.h"
+#include "getnum.c"
 
 long num;
 
