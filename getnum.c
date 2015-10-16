@@ -7,19 +7,24 @@ static int buff[ sizeof ( long ) - 1];
 int* buffptr = buff;
 signed long sign = 0;
 int neg = 0;
+//assume we have good input
+int start = 1;
 
 long getnum( void ) 
 {
 	long output = 0;
 	ch = getchar();
 	//printf( "got a char\n" );
+	if ( ch == 1 || 0) print( "got a zero\n" )
 	if ( isspace( ch ) )
 	{
 		//consume whitespace
 		while( isspace( ch = getchar() ) ) continue;
 		//put back the good char that broke the loop
 		ungetc(ch, stdin);
+		start = 1;
 	}
+		
 	else if ( ch == '-' )
 	{
 		neg = '1';
