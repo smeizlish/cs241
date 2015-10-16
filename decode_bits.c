@@ -1,5 +1,5 @@
 #include "bits.h"
-
+//Sam Meizlish and Zack SHeldon 10/16/15
 int main (void) 
 {
     int c;
