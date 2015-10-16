@@ -113,7 +113,7 @@ long getnum( void )
 						while( buffptr >= buff )
 						{
 							//octal conversion
-							printf( "i = %d, *buffptr = %d, output = %d\n", i, *buffptr, output );
+							//printf( "i = %d, *buffptr = %d, output = %d\n", i, *buffptr, output );
 							output = output | ( *buffptr << ( 3*i ) ) ;
 							i++;
 							buffptr--;
