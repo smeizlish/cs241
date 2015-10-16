@@ -47,8 +47,7 @@ long getnum( void )
 						{
 							output = output | ( *buffptr << i );
 							//printf( "%d %d %d\n", i, *buffptr, output );
-
-    buffptr--;
+							buffptr--;
 							i++;
 						}
 						break;
