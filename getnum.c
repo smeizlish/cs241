@@ -42,11 +42,11 @@ long getnum( void )
 				    		*buffptr = ch - '0';
 				    		buffptr++;
 					}
-					else if ( isspace( ch ) || ( ch == EOF ) )
+					if ( isspace( ch ) || ( ch == EOF ) )
 					{
 						//read backwards until we're at the start of the array
 						int i = 0;
-						buffptr--;
+						//buffptr--;
 						while ( buffptr >= buff )
 						{
 							output = output | ( *buffptr << i );
