@@ -14,6 +14,6 @@ long getnum(void);
 //ex: e^x
 int expon(int e, int x);
 
-char negative = '0';
+extern char negative = '0';
 
 #endif

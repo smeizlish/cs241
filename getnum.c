@@ -24,6 +24,7 @@ long getnum( void )
 	else if ( ch == '-' )
 	{
 		negative = '1';
+		printf("%s,%c\n", "fuckyeah!",negative);
 		ch = getchar();
 	}
 	if ( ch == '0' ) {
@@ -166,7 +167,7 @@ long getnum( void )
     if (error)
     {
 	//print a relevant error message
-	printf( "%s\n", "ERROR" );
+	printf( "%s %ld %c \n", "ERROR" ,output, ch);
 
     }
     //if ( neg ) sign = -output;

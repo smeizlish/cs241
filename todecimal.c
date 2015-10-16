@@ -6,7 +6,7 @@ int ch;
 int main( void ){
     extern char negative;
     num = getnum();
-    if (neg == '1'){
+    if (neg tive== '1'){
 	printf("-%ld\n", num);
     }
     else{
@@ -14,8 +14,8 @@ int main( void ){
     }
     ch = getchar();
     while (ch != EOF){
-	if (isspace(ch){
-	    while (isspace(ch){
+	if (isspace(ch)){
+	    while (isspace(ch)){
 		ch = getchar();
 		printf("%d",ch);
 		    }
@@ -23,7 +23,7 @@ int main( void ){
 	printf("%s", "test");
 	num = getnum();
 	//if statement for negative flag??
-	if (neg=='1'){
+	if (negative=='1'){
 	    printf("-%ld\n", num);
 	}
 	else{
