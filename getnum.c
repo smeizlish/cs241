@@ -33,6 +33,7 @@ long getnum( void )
 	if ( ch == '0' ) {
 		ch = getchar();
 		switch (ch) {
+//BINARY
 			case 'b':
 				while( ( ch = getchar() ) )
 				{
@@ -63,7 +64,7 @@ long getnum( void )
 					} 
 			    	}
 			    break;
-			    
+//HEXADECIMAL
 			case 'x': 
 				while ( ( ch = getchar() ) )
 			    	{
@@ -93,6 +94,7 @@ long getnum( void )
 							buffptr--;
 							i++;
 						}
+						printf( "hex conversion done, contents of buff[0] =  %d", buff[0])
 						break;
 					}
 					else
