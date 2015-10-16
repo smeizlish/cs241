@@ -6,7 +6,7 @@ encode_bits: puts chars in a file into binary
 decode_bits: takes binary input and outputs it in ASCII
 tooctal: takes numeric input, outputs in octal
 todecimal: takes numeric input, outputs in base10
-tohex: takes numeric input, outputs in hexadecimal (lowercase)
+tohex: takes numeric input, outputs in hexadecimal (uppercase)
 tobinary: takes numeric input, outputs in binary
 
 getnum() returns a long int in decimal notation
