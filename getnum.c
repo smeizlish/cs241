@@ -11,14 +11,13 @@ int neg = 0;
 long getnum( void ) 
 {
 	long output = 0;
-	//extern char negative;
 	ch = getchar();
-	
+	printf( "got a char\n" );
 	if ( isspace( ch ) )
 	{
 		//consume whitespace
 		while( isspace( ch = getchar() ) ) continue;
-		//put back the good char that broke the while
+		//put back the good char that broke the loop
 		ungetc(ch, stdin);
 	}
 	else if ( ch == '-' )

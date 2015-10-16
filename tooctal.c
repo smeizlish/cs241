@@ -14,5 +14,6 @@ int main( void ){
 	else{
 	    printf("0%lo\n", num);
 	}
+	ch = getchar();
     }
 }
