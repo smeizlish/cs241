@@ -86,7 +86,7 @@ long getnum( void )
 					{
 						//read backwards until we're at the start of the array
 						int i = 0;
-						buffptr--;
+						//buffptr--;
 						while ( buffptr >= buff )
 						{
 							output |= (*buffptr << 4*i) ;
