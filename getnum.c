@@ -12,7 +12,7 @@ long getnum( void )
 {
 	long output = 0;
 	ch = getchar();
-	printf( "got a char\n" );
+	//printf( "got a char\n" );
 	if ( isspace( ch ) )
 	{
 		//consume whitespace
