@@ -15,7 +15,7 @@ long getnum( void )
 	long output = 0;
 	ch = getchar();
 	//printf( "got a char\n" );
-	if ( ch == '1' || '0') printf( "got a zero\n" );
+	//if ( ( '0' < ch) || (ch printf( "got a zero\n" );
 	if ( isspace( ch ) )
 	{
 		//consume whitespace
@@ -36,13 +36,13 @@ long getnum( void )
 			case 'b':
 				while( ( ch = getchar() ) )
 				{
-					if ( ch == '1' | ch == '0' )
+					if ( ch == '1' || ch == '0' )
 					{
 				    		//read chars into array based on int value
 				    		*buffptr = ch - '0';
 				    		buffptr++;
 					}
-					else if ( isspace( ch ) | ( ch == EOF ) )
+					else if ( isspace( ch ) || ( ch == EOF ) )
 					{
 						//read backwards until we're at the start of the array
 						int i = 0;
@@ -67,22 +67,22 @@ long getnum( void )
 			case 'x': 
 				while ( ( ch = getchar() ) )
 			    	{
-					if ( '0' <= ch & ch <= '9' ) 
+					if ( '0' <= ch && ch <= '9' ) 
 					{
 					    //read chars into array based on int value
 					    *buffptr = ch - '0';
 					    buffptr++;
 					}
-					else if ('A' <= ch & ch <= 'F' )
+					else if ('A' <= ch && ch <= 'F' )
 					{
 					    *buffptr = ch - 'A' + 10;
 					    buffptr++;
 					}
-					else if ('a' <= ch & ch <= 'f' ){
+					else if ('a' <= ch && ch <= 'f' ){
  						*buffptr = ch - 'a' + 10;
 						buffptr++;
 					}
-					else if ( isspace( ch ) | ( ch == EOF ) )
+					else if ( isspace( ch ) || ( ch == EOF ) )
 					{
 						//read backwards until we're at the start of the array
 						int i = 0;
