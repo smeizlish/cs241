@@ -4,7 +4,7 @@ signed long num;
 int ch;
 
 int main( void ){
-    extern char negative;
+    /*extern char negative;
     num = getnum();
     printf("%lx\n",num);
     if (negative == '1'){
@@ -14,14 +14,9 @@ int main( void ){
 	printf("0x%lx\n", num);
     }
     ch = getchar();
-    while (ch != EOF){
-	if (isspace(ch)){
-	    while (isspace(ch)){
-		ch = getchar();
-		printf("%d",ch);
-		    }
-		}
-	printf("%s", "test");
+    */
+    while (ch != EOF)
+    {
 	num = getnum();
 	//if statement for negative flag??
 	if (negative=='1'){

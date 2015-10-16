@@ -6,12 +6,12 @@ int error = 0;
 static int buff[ sizeof ( long ) - 1];
 int* buffptr = buff;
 signed long sign = 0;
-
+int neg = 0;
 
 long getnum( void ) 
 {
 	long output = 0;
-	extern char negative;
+	//extern char negative;
 	ch = getchar();
 	
 	if ( isspace( ch ) )
@@ -23,15 +23,14 @@ long getnum( void )
 	}
 	else if ( ch == '-' )
 	{
-		negative = '1';
-		printf("%s,%c\n", "fuckyeah!",negative);
+		neg = '1';
 		ch = getchar();
 	}
 	if ( ch == '0' ) {
 		ch = getchar();
 		switch (ch) {
 			case 'b':
-				while( ch = getchar() )
+				while( ( ch = getchar() ) )
 				{
 					if ( ch == '1' | ch == '0' )
 					{
@@ -62,7 +61,7 @@ long getnum( void )
 			    break;
 			    
 			case 'x': 
-				while ( ch = getchar() )
+				while ( ( ch = getchar() ) )
 			    	{
 					if ( '0' <= ch & ch <= '9' ) 
 					{
@@ -133,7 +132,7 @@ long getnum( void )
 	else if ( ( '1' <= ch ) & ( ch <= '9' ) ) 
 	{
 		ungetc( ch, stdin );
-		while( ch = getchar() )
+		while( ( ch = getchar() ) )
 		{
 			if ( ( '0' <= ch ) & ( ch <= '9' ) ) 
 			{
