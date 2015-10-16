@@ -73,6 +73,10 @@ long getnum( void )
 					    *buffptr = ch - 'A' + 10;
 					    buffptr++;
 					}
+					else if ('a' <= ch & ch <= 'f' ){
+ 						*buffptr = ch - 'a' + 10;
+						buffptr++;
+					}
 					else if ( isspace( ch ) | ( ch == EOF ) )
 					{
 						//read backwards until we're at the start of the array
