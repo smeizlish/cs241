@@ -14,8 +14,6 @@ long getnum( void )
 {
 	long output = 0;
 	ch = getchar();
-	//printf( "got a char\n" );
-	//if ( ( '0' < ch) || (ch printf( "got a zero\n" );
 	if ( isspace( ch ) )
 	{
 		//consume whitespace
@@ -95,7 +93,7 @@ long getnum( void )
 							buffptr--;
 							i++;
 						}
-						//printf( "hex conversion done, contents of buff =  %d", *buffptr);
+						printf( "hex conversion done, contents of buff =  %d", *(buffptr-1));
 						break;
 					}
 					else
