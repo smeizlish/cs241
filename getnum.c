@@ -93,7 +93,7 @@ long getnum( void )
 							buffptr--;
 							i++;
 						}
-						printf( "hex conversion done, contents of buff =  %s\n", *(buffptr+1));
+						printf( "hex conversion done, contents of buff =  %s\n", buff[0]);
 						break;
 					}
 					else
