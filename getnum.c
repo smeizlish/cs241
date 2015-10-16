@@ -158,17 +158,14 @@ long getnum( void )
 		    		break;
 			} 
 	    	}
-	}		
-
-    //error handling
+	}
+	
     if (error)
     {
 	//print a relevant error message
 	printf( "%s\n", "ERROR" );
 
     }
-    //if ( neg ) sign = -output;
-    //else sign |= output;
     return output;
 }
 
