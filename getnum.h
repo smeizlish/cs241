@@ -13,7 +13,5 @@ long getnum(void);
 //second input value is the number it is raised to
 //ex: e^x
 int expon(int e, int x);
-
-char negative = '0';
-
+extern int neg;
 #endif

@@ -1,8 +1,18 @@
 #include "getnum.h"
 
 long num;
+int ch;
 
 int main( void ){
-  num = getnum();
-  printf("0%lo", num);
+ 
+    while (ch != EOF)
+    {
+	num = getnum();
+	if (neg=='1'){
+	    printf("-0%lo\n", num);
+	}
+	else{
+	    printf("0%lo\n", num);
+	}
+    }
 }
