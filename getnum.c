@@ -39,7 +39,7 @@ long getnum( void )
 						int i = 0;
 						while ( count >= 0 )
 						{
-							output |= (buff[count] << 4*i) ;
+							output |= (buff[count] << i) ;
 							i++;
 							count--;
 						}

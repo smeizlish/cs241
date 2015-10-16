@@ -15,17 +15,20 @@ long bin(long x){
 }
 
 int main( void ){
+    ch = getchar();
     while (ch != EOF)
     {
-	num = bin(getnum());
-	if (neg=='1'){
-	    printf("-%ld\n", num);
+	if ( !isspace( ch ) ) {
+	    ungetc( ch, stdin );
+	    num = bin( getnum() );
 	}
-	else{
-	    printf("%ld\n", num);
+	if (neg== '1' ) {
+	    printf( "-%ld\n", num );
+	    neg = '0';
+	}
+	else {
+	    printf( "%ld\n", num );
 	}
 	ch = getchar();
     }
-}
-
 }
