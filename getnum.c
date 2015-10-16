@@ -1,7 +1,6 @@
 #include "getnum.h"
 
 int ch;
-int neg;
 int error = 0;
 //input buffer
 static int buff[ sizeof ( long ) - 1];
@@ -12,6 +11,7 @@ signed long sign = 0;
 long getnum( void ) 
 {
 	long output = 0;
+	extern char negative;
 	ch = getchar();
 	
 	if ( isspace( ch ) )
@@ -23,7 +23,7 @@ long getnum( void )
 	}
 	else if ( ch == '-' )
 	{
-		neg = 1;
+		negative = '1';
 		ch = getchar();
 	}
 	if ( ch == '0' ) {
@@ -47,7 +47,8 @@ long getnum( void )
 						{
 							output = output | ( *buffptr << i );
 							//printf( "%d %d %d\n", i, *buffptr, output );
-							buffptr--;
+
+    buffptr--;
 							i++;
 						}
 						break;
@@ -167,15 +168,10 @@ long getnum( void )
 	//print a relevant error message
 	printf( "%s\n", "ERROR" );
 
-	//eat non-whitespace characters
-	while ( getchar() != EOF ) continue;
-
-	//let's try again
-	getnum();
     }
-    if ( neg ) sign = -output;
-    else sign |= output;
-    return sign;
+    //if ( neg ) sign = -output;
+    //else sign |= output;
+    return output;
 }
 
 int expon( int e, int x )
