@@ -13,6 +13,7 @@ int main( void ){
 	else{
 	    printf("0x%lx\n", num);
 	}
+	ch = getchar();
     }
 }
 
