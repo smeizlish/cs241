@@ -1,7 +1,7 @@
 #include "getnum.h"
 
 int ch;
-int neg;
+static int neg;
 int error = 0;
 //input buffer
 static int buff[ sizeof ( long ) - 1];
