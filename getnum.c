@@ -15,7 +15,7 @@ long getnum( void )
 	long output = 0;
 	ch = getchar();
 	//printf( "got a char\n" );
-	if ( ch == 1 || 0) print( "got a zero\n" )
+	if ( ch == 1 || 0) print( "got a zero\n" );
 	if ( isspace( ch ) )
 	{
 		//consume whitespace
