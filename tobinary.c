@@ -36,8 +36,8 @@ int main( void ){
 		if (neg== '1' ) printf("-");
 		printf("0b");
 		bin( num );	
-		ch = getchar();
 	}
+	ch = getchar();
     }
 }
 
