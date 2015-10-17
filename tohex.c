@@ -11,12 +11,14 @@ int main( void ){
 	    ungetc( ch, stdin );
 	    num = getnum();
 	}
-	if (neg== '1' ) {
-	    printf( "-0x%lx\n", num );
-	    neg = '0';
-	}
-	else {
-	    printf( "0x%lx\n", num );
+	if (!error) {
+		if (neg== '1' ) {
+	    		printf( "-0x%lx\n", num );
+	    		neg = '0';
+		}
+		else {
+	    		printf( "0x%lx\n", num );
+		}
 	}
 	ch = getchar();
     }
