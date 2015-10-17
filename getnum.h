@@ -15,8 +15,9 @@ long getnum(void);
 int expon(int e, int x);
 
 //global flags
+//value is negative
 extern int neg;
-//true when the next char in stdin is the start of a number
-extern int start;
+//error flag
+extern int error;
 
 #endif
