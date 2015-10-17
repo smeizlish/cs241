@@ -8,17 +8,17 @@ int main( void ){
     ch = getchar();
     while (ch != EOF)
     {
-	if ( !isspace( ch ) ) {
-	    ungetc( ch, stdin );
-	    num = getnum();
-	}
-	if (neg== '1' ) {
-	    printf( "-%ld\n", num );
-	    neg = '0';
-	}
-	else {
-	    printf( "%ld\n", num );
-	}
+		if ( !isspace( ch ) ) {
+	    	ungetc( ch, stdin );
+	    	num = getnum();
+		}
+		if (!error) {
+			if (neg== '1' ) {
+	    		printf( "-%ld\n", num );
+	    		neg = '0';
+			}
+		else printf( "%ld\n", num );
+		}
 	ch = getchar();
     }
 }
