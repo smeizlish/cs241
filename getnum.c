@@ -159,7 +159,7 @@ long getnum( void )
 	while ( !isspace( ch = getchar() ) );
 	ungetc(ch, stdin);
     }
-    else return output;
+    return output;
 }
 
 int expon( int e, int x )
