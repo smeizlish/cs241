@@ -11,6 +11,7 @@ long getnum( void )
 	int ch;
 	int count = 0; 
 	long output = 0;
+	error = 0;
 	
 	ch = getchar();
 	if ( ch == '-' )
