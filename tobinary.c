@@ -32,9 +32,12 @@ int main( void ){
 	    ungetc( ch, stdin );
 	    num = getnum();
 	}
-	if (neg== '1' ) printf("-");
-	printf("0b");
-	bin( num );	
-	ch = getchar();
+	if (!error) {
+		if (neg== '1' ) printf("-");
+		printf("0b");
+		bin( num );	
+		ch = getchar();
+	}
     }
 }
+
