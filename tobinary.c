@@ -1,18 +1,28 @@
 #include "getnum.h"
 //Sam Meizlish and Zack SHeldon 10/16/15
 long num;
-long converted;
+int ch;
 
-long bin(long x){
-    int i = sizeof(x)*CHAR_BIT;
-    converted=0;
-    while (i>0){
-	--i;
-	converted *= 10;
-	converted |= (x >> i) & 1;
-    }    
-    return converted;
-}
+void bin( long x ){
+    long dig = x;
+    int MSB = 0;
+    
+    for ( int i = 0; i < sizeof (x) * CHAR_BIT; i++ ) {
+	if (dig && 1) {
+	    MSB = i;
+	}
+	dig >>= 1;
+    }
+    dig = x;
+    for ( int i = MSB; i >= 0; i-- ) {
+	
+	if ( x	& ( 1 << i ) ){
+	    printf("1");
+	}
+	else printf("0");	
+    }
+    printf("\n");
+}    
 
 int main( void ){
     ch = getchar();
@@ -20,15 +30,11 @@ int main( void ){
     {
 	if ( !isspace( ch ) ) {
 	    ungetc( ch, stdin );
-	    num = bin( getnum() );
+	    num = getnum();
 	}
-	if (neg== '1' ) {
-	    printf( "-%ld\n", num );
-	    neg = '0';
-	}
-	else {
-	    printf( "%ld\n", num );
-	}
+	if (neg== '1' ) printf("-");
+	printf("0b");
+	bin( num );	
 	ch = getchar();
     }
 }
