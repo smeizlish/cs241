@@ -4,6 +4,7 @@
 static int buff[ sizeof ( long ) - 1];
 int neg = 0;
 int *buffptr = buff;
+int error = 0;
 
 long getnum( void ) 
 {
@@ -154,9 +155,11 @@ long getnum( void )
     if (error)
     {
 	//print a relevant error message
-	printf( "%s %ld %c \n", "ERROR" ,output, ch);
+	printf( "ERROR\n");
+	while ( !isspace( ch = getchar() ) );
+	ungetc(ch, stdin);
     }
-    return output;
+    else return output;
 }
 
 int expon( int e, int x )
